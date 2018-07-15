@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	"golang.org/x/net/html"
-	"io"
 	"net/http"
+	"safari"
 	"twitter"
 )
 
@@ -15,35 +14,12 @@ func main() {
 		panic(err)
 	}
 	defer resp.Body.Close()
-	highlights, err := parseBody(resp.Body)
+	highlights, err := safari.GetHighlights(resp.Body)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println(highlights)
 	for _, highlight := range highlights {
 		twitter.Tweet(highlight)
-	}
-}
-
-func parseBody(body io.Reader) ([]string, error) {
-	highlights := []string{}
-	toPrint := false
-	z := html.NewTokenizer(body)
-	for {
-		tt := z.Next()
-		switch tt {
-		case html.ErrorToken:
-			return highlights, nil
-		case html.TextToken:
-			if toPrint {
-				highlights = append(highlights, string(z.Text()))
-				toPrint = false
-			}
-		case html.StartTagToken, html.EndTagToken:
-			_, value, _ := z.TagAttr()
-			if string(value) == "t-annotation-quote annotation-quote" {
-				toPrint = true
-			}
-		}
 	}
 }
