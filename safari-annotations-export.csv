@@ -1,0 +1,165 @@
+<!--[if IE]><![endif]--><!DOCTYPE html><!--[if IE 8]><html class="no-js ie8 oldie" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/accounts/login/"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy="" data-debug=0 data-testing=0><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" data-login-url="/accounts/login/"
+data-offline-url="/"
+data-url="/accounts/login/"
+data-csrf-cookie="csrfsafari"
+data-highlight-privacy="" data-debug=0 data-testing=0><!--<![endif]--><head><title>Sign in: Safari</title><meta name="description" content="" /><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="author" content="Safari Books Online" /><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"/><meta name="HandheldFriendly" content="True"/><meta name="MobileOptimized" content="320"/><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://"/><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0"/><meta property="twitter:account_id" content="4503599627559754" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><link rel="apple-touch-icon" href="/static/images/apple-touch-icon.0c29511d2d72.png"/><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'><link rel="stylesheet" href="/static/CACHE/css/fb73706acae2.css" type="text/css" /><!--[if lt IE 9]><script src="/static/js/src/respond.min.3b44ce04a146.js"></script><![endif]--><script type="text/javascript">
+    (function(i,s,o,g,r,a,m) {
+      i['GoogleAnalyticsObject']=r;
+      i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+      a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+      a.async=1;
+      a.src=g;
+      m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    var matches = document.cookie.match(/BrowserCookie\s*=\s*([a-f0-9\-]{36})/),
+      user_uuid = null;
+
+    if (matches && matches.length === 2) {
+      user_uuid = matches[1];
+    }
+
+  
+    ga('create', 'UA-39299553-7');
+  
+
+  
+    
+      ga('set', 'dimension1', 'Anonymous');
+    
+  
+
+  ga('set', 'dimension6', user_uuid);
+
+  
+
+  
+
+  
+
+  //enable enhanced link tracking
+  ga('require', 'linkid', 'linkid.js');
+
+  // reading interface will track pageviews itself
+  if (document.location.pathname.indexOf("/library/view") !== 0) {
+    ga('send', 'pageview');
+  }
+  </script><script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5P4V6Z');
+  </script><script src="/static/js/src/modernizr.8e35451ddb64.js"></script><script defer src="/static/js/build/vendor.6c81a5361491.js"></script><script defer src="/static/js/build/loginPage.29fcf4d98b89.js"></script><!-- End Deployment Code --><script defer async src="//www.google.com/recaptcha/api.js"></script></head><body class="nav-collapsed bg  user-anon login"><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P4V6Z"
+            height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript><a href="//www.oreilly.com/go/oreilly" class="orm-topbar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 10" width="78" height="13"><desc>O'Reilly logo</desc><polygon points="28.09 1.96 28.09 0.42 21.68 0.42 21.68 9.64 28.09 9.64 28.09 8.11 23.22 8.11 23.22 5.8 27.86 5.8 27.86 4.27 23.22 4.27 23.22 1.96 28.09 1.96"/><polygon points="32.85 9.64 32.85 0.42 34.39 0.42 34.39 8.11 38.82 8.11 38.82 9.64 32.85 9.64"/><polygon points="40.07 9.64 40.07 0.42 41.61 0.42 41.61 8.11 46.04 8.11 46.04 9.64 40.07 9.64"/><rect x="29.71" y="0.42" width="1.54" height="9.22"/><path d="M1.59,6.28a4.8,4.8,0,1,1,4.8,4.8,4.8,4.8,0,0,1-4.8-4.8M4.09,4A3.27,3.27,0,1,0,6.4,3,3.27,3.27,0,0,0,4.09,4" transform="translate(-1.59 -1.2)"/><path d="M19.82,6.89A2.69,2.69,0,0,0,19,1.62H14.41v9.22h1.54V7h2.14l2.32,3.84H22.2ZM15.95,5.47V3.16H19a1.15,1.15,0,0,1,0,2.31h-3.1Z" transform="translate(-1.59 -1.2)"/><path d="M13.32,2.61a1.13,1.13,0,1,1-1.13-1.13,1.13,1.13,0,0,1,1.13,1.13" transform="translate(-1.59 -1.2)"/><polygon points="52.9 0.42 51.03 0.42 48.66 3.85 46.3 0.42 44.43 0.42 47.89 5.44 47.89 9.64 49.43 9.64 49.43 5.44 52.9 0.42"/><path d="M58.31,1.2a2.41,2.41,0,1,0,2.41,2.42A2.42,2.42,0,0,0,58.31,1.2m0,4.44a2,2,0,1,1,2-2,2,2,0,0,1-2,2" transform="translate(-1.59 -1.2)"/><path d="M59.4,3.09a0.72,0.72,0,0,0-.72-0.72H57.32V4.83h0.41v-1h0.69l0.49,1h0.46l-0.51-1a0.71,0.71,0,0,0,.54-0.69m-1.67-.31h0.95a0.31,0.31,0,0,1,.31.31,0.31,0.31,0,0,1-.31.3H57.73V2.78Z" transform="translate(-1.59 -1.2)"/></svg></a><header role="banner"><div class="wrapper"><div class="logo t-logo"><a href="/" class="l0 safari_gray"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 36" width="110" height="32" class="home-logo"><desc>Safari Logo</desc><path d="M27.85,7.25a1.4,1.4,0,1,1,2.75,0V15.6a1.44,1.44,0,0,1-1.4,1.71A1.49,1.49,0,0,1,28,16.64,13.56,13.56,0,0,1,27.54,14c-0.62-3.89-4.15-6.54-8.66-6.54S11,10.16,11,14c0,3,1.66,4.56,6.8,6.28l5.29,1.82c5.86,2,8.14,4.46,8.14,9,0,5.76-4.36,9.6-10.84,9.6-5,0-8.3-1.87-9.91-5.6v3.42a1.4,1.4,0,1,1-2.75,0V29.71A1.44,1.44,0,0,1,9.18,28c1,0,1.35.52,1.45,2A10.59,10.59,0,0,0,13,35.63a9.05,9.05,0,0,0,6.8,2.7c5,0,8.3-2.8,8.3-7a5.45,5.45,0,0,0-2.54-4.82,18.52,18.52,0,0,0-3.89-1.71l-4.51-1.56c-3.58-1.24-5.24-2-6.54-3a7.46,7.46,0,0,1-2.75-6c0-5.45,4.36-9.13,10.69-9.13,4.46,0,7.63,1.71,9.29,5.08V7.25Z" transform="translate(-7.78 -4.92)"/><path d="M51.81,35.11c-1.82,4.1-4.51,5.81-9.28,5.81-5.39,0-8.71-2.75-8.71-7.31A6.88,6.88,0,0,1,38.11,27c1.87-.83,4.62-1.19,8.92-1.19,0.93,0,2,0,2.8.05a7,7,0,0,0,.93.05,0.89,0.89,0,0,0,1-.88V24.84c0-3.37-.31-4.46-1.71-5.71-1.19-1.09-2.8-1.56-5.24-1.56-4.15,0-6.64,1.71-7.11,4.88a1.45,1.45,0,0,1-2.9-.16c0-2.13,1.82-4.67,4.15-5.81a13.94,13.94,0,0,1,6-1.09c3.63,0,6.22.88,7.83,2.75,1.4,1.56,1.82,3.16,1.82,6.64V37a0.89,0.89,0,0,0,1,1h1.76a1.08,1.08,0,1,1,0,2.13H53.05a1.06,1.06,0,0,1-1.24-1.24V35.11Zm-15-1.61c0,3.32,2.33,5.24,6.33,5.24,3.27,0,5.76-1.24,7.16-3.58a16.08,16.08,0,0,0,1.45-6.38A0.8,0.8,0,0,0,51.24,28a34,34,0,0,0-4.62-.21C39.93,27.79,36.76,29.66,36.76,33.5Z" transform="translate(-7.78 -4.92)"/><path d="M67.91,37a0.89,0.89,0,0,0,1,1H71.8a1.08,1.08,0,1,1,0,2.13H62a1.09,1.09,0,1,1,0-2.13h2.07a0.89,0.89,0,0,0,1-1V19.29a0.89,0.89,0,0,0-1-1H61.63a1.08,1.08,0,1,1,0-2.13h2.44a0.89,0.89,0,0,0,1-1V13.48c0-3.16.78-5.39,2.39-6.8a8.56,8.56,0,0,1,5.19-1.76,10.85,10.85,0,0,1,3.58.62,1.83,1.83,0,0,1,.52,1,1.23,1.23,0,0,1-.88,1,2.74,2.74,0,0,1-.67-0.1,12.61,12.61,0,0,0-2.28-.31,5.41,5.41,0,0,0-4,2c-0.73,1-1,2.18-1,4.56v1.35a0.89,0.89,0,0,0,1,1h3.58a1.09,1.09,0,1,1,0,2.13H68.95a0.89,0.89,0,0,0-1,1V37Z" transform="translate(-7.78 -4.92)"/><path d="M93.68,35.11c-1.82,4.1-4.51,5.81-9.28,5.81-5.39,0-8.71-2.75-8.71-7.31A6.88,6.88,0,0,1,80,27c1.87-.83,4.62-1.19,8.92-1.19,0.93,0,2,0,2.8.05a7,7,0,0,0,.93.05,0.89,0.89,0,0,0,1-.88V24.84c0-3.37-.31-4.46-1.71-5.71-1.19-1.09-2.8-1.56-5.24-1.56-4.15,0-6.64,1.71-7.11,4.88a1.45,1.45,0,0,1-2.9-.16c0-2.13,1.82-4.67,4.15-5.81a13.94,13.94,0,0,1,6-1.09c3.63,0,6.22.88,7.83,2.75,1.4,1.56,1.82,3.16,1.82,6.64V37a0.89,0.89,0,0,0,1,1h1.76a1.08,1.08,0,1,1,0,2.13H94.92a1.06,1.06,0,0,1-1.24-1.24V35.11Zm-15-1.61c0,3.32,2.33,5.24,6.33,5.24,3.27,0,5.76-1.24,7.16-3.58a16.07,16.07,0,0,0,1.45-6.38A0.8,0.8,0,0,0,93.11,28a34,34,0,0,0-4.62-.21C81.8,27.79,78.64,29.66,78.64,33.5Z" transform="translate(-7.78 -4.92)"/><path d="M109.44,21.05a6.5,6.5,0,0,1,2-3.53,8.68,8.68,0,0,1,5.71-2.13c1.35,0,2.13.52,2.13,1.35a0.83,0.83,0,0,1-.78,1,3.75,3.75,0,0,1-.67-0.05,2.45,2.45,0,0,0-.78-0.1,11.52,11.52,0,0,0-3.63.88c-2.59,1.19-4,4-4,8.2V37a0.89,0.89,0,0,0,1,1h3a1.08,1.08,0,1,1,0,2.13h-10a1.09,1.09,0,1,1,0-2.13h2.13a0.89,0.89,0,0,0,1-1V19.29a0.89,0.89,0,0,0-1-1h-2.13a1.09,1.09,0,1,1,0-2.13h4.72a1.06,1.06,0,0,1,1.24,1.24v3.68Z" transform="translate(-7.78 -4.92)"/><path d="M129.09,37a0.89,0.89,0,0,0,1,1h1.82a1.08,1.08,0,1,1,0,2.13h-8.82a1.09,1.09,0,1,1,0-2.13h2.13a0.89,0.89,0,0,0,1-1V19.29a0.89,0.89,0,0,0-1-1h-2.13a1.09,1.09,0,1,1,0-2.13h4.72a1.06,1.06,0,0,1,1.24,1.24V37ZM129.55,8.5a2.08,2.08,0,0,1-2.07,2.07,2.17,2.17,0,0,1-2.13-2.13,2.08,2.08,0,0,1,2.07-2.08A2.1,2.1,0,0,1,129.55,8.5Z" transform="translate(-7.78 -4.92)"/></svg></a></div><nav role="navigation"><a href="/register/" class="button-primary savebutton positive js-ga-top signup">Start a Free Trial</a><a href="/team-setup/" class="button-primary savebutton positive signup">Get Safari for Your Team</a></nav></div></header><div id="container"><article>
+    
+      
+    
+    
+    
+
+
+
+ <!--[if lt IE 9]>
+  
+<![endif]-->
+
+
+
+  <script defer src="/static/js/build/djangoMessagesPage.faa538872746.js"></script>
+
+
+
+    
+    
+    
+
+
+    
+
+  <section class="pod" id="login">
+    <header>
+      <h1>Sign In</h1>
+    </header>
+
+    <div class="innercontent">
+      
+
+<form action="/accounts/login/?next=/a/export/csv/" id="login-form" method="post" class="js-login-view">
+  <input type='hidden' name='csrfmiddlewaretoken' value='exkHJEC7dboWWyCves3lKyZMasMORF8UZE6QO1mtr38xuTUnzrhEPCd8lIUgAiMB' />
+  <span class="sso-message">If your workplace integrates with Safari Single Sign On, sign in with just your email below.</span>
+  <input name="email" autocapitalize="off" autocorrect="off" type="text" autofocus="autofocus" id="id_email" value="" tabindex="1" class="js-username " placeholder="Username or Email Address"/>
+  
+
+  <div class="js-password">
+    <label><a href="/accounts/password/reset/" class="forgotpass">Forgot Password?</a></label>
+    <input autocapitalize="off" autocorrect="off" type="password" name="password1" id="id_password1" tabindex="2" class="" placeholder="Password"/>
+    
+  </div>
+
+  
+
+  
+
+  <div class="buttongroup">
+    <input type="submit" name="login" id="login" value="Sign In" class="button-primary" tabindex="4" />
+  </div>
+    <div class="rememberme"><input type="checkbox" name="remember" tabindex="3" /> Remember Me</div>
+
+   <input type="hidden" name="next" value="/a/export/csv/" />
+
+</form>
+
+    </div>
+  </section>
+
+
+
+    
+
+    
+      <footer class="pagefoot t-pagefoot">
+    <a href="#" class="icon-up"><div class="visuallyhidden">Back to top</div></a>
+    <ul class='js-footer-nav'>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/contact/">Contact Us</a></li>
+    </ul>
+    <span class="copyright">&#169; 2018 <a href="https://www.safaribooksonline.com" target="_blank">Safari</a>.</span>
+    <a href="/terms/">Terms of Service</a> /
+    <a href="/membership-agreement/">Membership Agreement</a> /
+    <a href="/privacy/">Privacy Policy</a>
+  </footer>
+
+
+  </article>
+</div>
+
+    <script>
+      var g = {};
+      
+      
+
+      // This sort of function should go into the html
+      /*! Thanks John Resig et al: http://ejohn.org/blog/javascript-array-remove/
+      * Array Remove - By John Resig (MIT Licensed) */
+      Array.prototype.remove = function (from, to){
+        this.splice(from,
+        !to ||
+        1 + to - from + (!(to < 0 ^ from >= 0) && (to < 0 || -1) * this.length));
+        return this.length;
+      };
+    </script>
+
+    <script defer src="/jsi18n/web/" charset="utf-8"></script>
+
+    
+
+ <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationTime":89,"agent":"","applicationID":"3275661","licenseKey":"510f1a6865","queueTime":0,"beacon":"bam.nr-data.net","transactionName":"YgdaZ0NSW0cEB0RdWltNfkZfUEFdCgofXFBHDVYdR1pQQxZefFtSXAxuWlREG1MAEA==","errorBeacon":"bam.nr-data.net"}</script>
+ </body>
+</html>
