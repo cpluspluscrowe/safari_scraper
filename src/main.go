@@ -20,7 +20,9 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(highlights)
-	twitter.Tweet()
+	for _, highlight := range highlights {
+		twitter.Tweet(highlight)
+	}
 }
 
 func parseBody(body io.Reader) ([]string, error) {
