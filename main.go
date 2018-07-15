@@ -14,24 +14,32 @@ func main() {
 		panic(err)
 	}
 	defer resp.Body.Close()
-	parseBody(resp.Body)
-	fmt.Println("Done")
-}
-
-func parseBody(body io.Reader) {
-	doc, err := html.Parse(body)
+	highlights, err := parseBody(resp.Body)
 	if err != nil {
-		return
+		panic(err)
 	}
-	recurse(doc)
+	fmt.Println(highlights)
 }
 
-func recurse(n *html.Node) {
-	if n.Type == html.ElementNode {
-		fmt.Println(n.Data)
-
-	}
-	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		recurse(c)
+func parseBody(body io.Reader) ([]string, error) {
+	highlights := []string{}
+	toPrint := false
+	z := html.NewTokenizer(body)
+	for {
+		tt := z.Next()
+		switch tt {
+		case html.ErrorToken:
+			return highlights, nil
+		case html.TextToken:
+			if toPrint {
+				highlights = append(highlights, string(z.Text()))
+				toPrint = false
+			}
+		case html.StartTagToken, html.EndTagToken:
+			_, value, _ := z.TagAttr()
+			if string(value) == "t-annotation-quote annotation-quote" {
+				toPrint = true
+			}
+		}
 	}
 }
