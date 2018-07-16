@@ -7,8 +7,8 @@ import (
 )
 
 func Tweet(tweetText string) {
-	config := oauth1.NewConfig("GrH8fCv9zuecdPlvcfrPJVUqE", "7QHnRRRktOpa4EtnQGAAenMSqCgbmYZi2m5Udy9gVUc8px0gOi")
-	token := oauth1.NewToken("3127629293-7WR9PxYovLnrOZytacX6IGujOdQKUt295mnz3GM", "JKF32Yv8eAZjdubrBTR9z1gF3BBqrbAKrBweL6AnoRr4B")
+	config := oauth1.NewConfig("wvXNTaqdmmeAj884c0n4fUI1T", "vKQrJC5pO78U7cv38bo7NaisQowPc8RIFYoNgHqFDfmNZy0YWR")
+	token := oauth1.NewToken("3127629293-GJ3MaJe9QA540xRgMHFQz9Zo2OWDN5mSU4jc3DB", "PNiLZ8POuJWbCUUdaV4IFELUlz08YcwL7L8uJeXQPNjNu")
 	httpClient := config.Client(oauth1.NoContext, token)
 
 	// Twitter client
