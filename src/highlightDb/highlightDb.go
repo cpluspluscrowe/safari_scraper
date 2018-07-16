@@ -20,7 +20,7 @@ func InsertHighlights(highlights []string) {
 }
 
 func getDatabaseDriver() *sql.DB {
-	db, err := sql.Open("sqlite3", "./highlights.db")
+	db, err := sql.Open("sqlite3", "./highlightDb/highlights.db")
 	if err != nil {
 		panic(err)
 	}
@@ -29,9 +29,10 @@ func getDatabaseDriver() *sql.DB {
 }
 
 func GetHighlights() []Highlight {
-	db, err := sql.Open("sqlite3", "./highlights.db")
+	db, err := sql.Open("sqlite3", "./highlightDb/highlights.db")
 	defer db.Close()
-	rows, err := db.Query("SELECT 'uid','text' FROM highlights")
+	createHighlightTable(db)
+	rows, err := db.Query("SELECT * FROM highlights")
 	defer rows.Close()
 
 	highlights := []Highlight{}
