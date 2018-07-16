@@ -2,15 +2,17 @@ package highlightDb
 
 import (
 	"database/sql"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type Highlight struct {
 	text string
-	id   int
+	id   []uint8
 }
 
 func InsertHighlights(highlights []string) {
 	db := getDatabaseDriver()
+	defer db.Close()
 	createHighlightTable(db)
 	for _, highlight := range highlights {
 		insertHighlight(db, highlight)
@@ -26,18 +28,18 @@ func getDatabaseDriver() *sql.DB {
 	return db
 }
 
-func GetHighlights(db *sql.DB) []Highlight {
-	rows, err := db.Query("SELECT * FROM highlights")
+func GetHighlights() []Highlight {
+	db, err := sql.Open("sqlite3", "./highlights.db")
+	defer db.Close()
+	rows, err := db.Query("SELECT 'uid','text' FROM highlights")
 	defer rows.Close()
 
 	highlights := []Highlight{}
-	var text string
-	var id int
+	highlight := Highlight{}
 	for rows.Next() {
-		err = rows.Scan(&text, &id)
+		err = rows.Scan(&highlight.text, &highlight.id)
 		checkErr(err)
 
-		highlight := Highlight{text, id}
 		highlights = append(highlights, highlight)
 	}
 	return highlights
@@ -51,7 +53,7 @@ func insertHighlight(db *sql.DB, highlightText string) {
 func createHighlightTable(db *sql.DB) {
 	stmt, err := db.Prepare(`CREATE TABLE IF NOT EXISTS 'highlights' (
 		        	'uid' INTEGER PRIMARY KEY AUTOINCREMENT,
-			        'text' VARCHAR(144) UNIQUE NOT NULL,
+			        'text' VARCHAR(144) UNIQUE NOT NULL
 				);`)
 	_, err = stmt.Exec()
 	checkErr(err)
