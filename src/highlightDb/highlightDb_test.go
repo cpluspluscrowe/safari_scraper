@@ -1,18 +1,19 @@
 package highlightDb
 
 import (
-	"fmt"
 	"testing"
 )
 
-func TestInsert(*testing.T) {
+func TestInsert(t *testing.T) {
 	highlightTexts := []string{"New"}
 	InsertHighlights(highlightTexts)
 }
 
-func TestGetHighlights(*testing.T) {
+func TestGetHighlights(t *testing.T) {
 	highlightTexts := []string{"New"}
 	InsertHighlights(highlightTexts)
 	highlights := GetHighlights()
-	fmt.Println(highlights)
+	if len(highlights) <= 0 {
+		t.Errorf("GetHighlights did not return any highlights!")
+	}
 }
