@@ -22,3 +22,7 @@ func Tweet(tweetText string) {
 	}
 	fmt.Println(tweet, resp)
 }
+
+func FakeTweet(tweetText string) {
+	fmt.Println(tweetText)
+}

@@ -20,6 +20,6 @@ func main() {
 	}
 	fmt.Println(highlights)
 	for _, highlight := range highlights {
-		twitter.Tweet(highlight)
+		//		twitter.Tweet(highlight)
 	}
 }
