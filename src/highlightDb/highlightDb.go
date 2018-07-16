@@ -6,8 +6,8 @@ import (
 )
 
 type Highlight struct {
-	text string
-	id   []uint8
+	Text string
+	Id   []uint8
 }
 
 func InsertHighlights(highlights []string) {
@@ -37,7 +37,7 @@ func GetHighlights() []Highlight {
 	highlights := []Highlight{}
 	highlight := Highlight{}
 	for rows.Next() {
-		err = rows.Scan(&highlight.text, &highlight.id)
+		err = rows.Scan(&highlight.Text, &highlight.Id)
 		checkErr(err)
 
 		highlights = append(highlights, highlight)

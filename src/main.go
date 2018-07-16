@@ -21,8 +21,9 @@ func main() {
 	}
 	fmt.Println(highlights)
 	highlightDb.InsertHighlights(highlights)
-	for _, highlight := range highlights {
-		twitter.FakeTweet(highlight)
-		//		twitter.Tweet(highlight)
+
+	dbHighlights := highlightDb.GetHighlights()
+	for _, highlight := range dbHighlights {
+		twitter.Tweet(highlight.Text)
 	}
 }
