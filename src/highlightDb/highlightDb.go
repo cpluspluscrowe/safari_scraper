@@ -32,13 +32,13 @@ func GetHighlights() []Highlight {
 	db, err := sql.Open("sqlite3", "./database.db")
 	defer db.Close()
 	createHighlightTable(db)
-	rows, err := db.Query("SELECT * FROM highlights")
+	rows, err := db.Query("SELECT uid,text FROM highlights")
 	defer rows.Close()
 
 	highlights := []Highlight{}
 	highlight := Highlight{}
 	for rows.Next() {
-		err = rows.Scan(&highlight.Text, &highlight.Id)
+		err = rows.Scan(&highlight.Id, &highlight.Text)
 		checkErr(err)
 
 		highlights = append(highlights, highlight)

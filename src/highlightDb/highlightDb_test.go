@@ -1,6 +1,7 @@
 package highlightDb
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -15,5 +16,9 @@ func TestGetHighlights(t *testing.T) {
 	highlights := GetHighlights()
 	if len(highlights) <= 0 {
 		t.Errorf("GetHighlights did not return any highlights!")
+	} else {
+		for _, highlight := range highlights {
+			fmt.Println(highlight.Text)
+		}
 	}
 }
