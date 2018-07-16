@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"highlightDb"
 	"net/http"
 	"safari"
 	"twitter"
@@ -19,7 +20,9 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(highlights)
+	highlightDb.InsertHighlights(highlights)
 	for _, highlight := range highlights {
+		twitter.FakeTweet(highlight)
 		//		twitter.Tweet(highlight)
 	}
 }

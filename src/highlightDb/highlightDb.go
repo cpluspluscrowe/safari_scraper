@@ -1,4 +1,4 @@
-package database
+package highlightDb
 
 import (
 	"database/sql"
