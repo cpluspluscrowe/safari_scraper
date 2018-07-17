@@ -13,7 +13,7 @@ func TestInsert(t *testing.T) {
 func TestGetHighlights(t *testing.T) {
 	highlightTexts := []string{"New"}
 	InsertHighlights(highlightTexts)
-	highlights := GetHighlights()
+	highlights := GetUnpostedHighlights()
 	if len(highlights) <= 0 {
 		t.Errorf("GetHighlights did not return any highlights!")
 	} else {
