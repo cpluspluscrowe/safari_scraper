@@ -24,7 +24,7 @@ func main() {
 	dbHighlights := highlightDb.GetUnpostedHighlights()
 	fmt.Printf("Number of highlights to post: %d", len(dbHighlights))
 	for _, highlight := range dbHighlights {
-		fmt.Println(highlight.Text)
 		twitter.Tweet(highlight.Text)
+		SetHighlightAsPosted(highlight.Text)
 	}
 }

@@ -66,10 +66,10 @@ func GetPostedHighlights() []Highlight {
 
 func SetHighlightAsPosted(text string) {
 	db := getDatabaseDriver()
-	statement, _ := db.Prepare("insert into posted(text) = values(?)")
+	statement, _ := db.Prepare("insert into posted(text) values(?)")
 	statement.Exec(text)
 
-	statement, _ = db.Prepare("remove from new_posts where text = ?")
+	statement, _ = db.Prepare("delete from new_posts where text = ?")
 	statement.Exec(text)
 }
 
@@ -80,8 +80,8 @@ func insertHighlight(db *sql.DB, highlightText string) {
 
 func RemoveHighlightFromDatabase(highlightText string) {
 	db := getDatabaseDriver()
-	statement, _ := db.Prepare("remove from posted where text = ?")
-	statement.Exec(highlightText, highlightText)
+	statement, _ := db.Prepare("delete from posted where text = ?")
+	statement.Exec(highlightText)
 }
 
 func createHighlightTable(db *sql.DB) {

@@ -10,6 +10,19 @@ func TestInsert(t *testing.T) {
 	InsertHighlights(highlightTexts)
 }
 
+func TestMoveHighlight(t *testing.T) {
+	highlightTexts := []string{"New"}
+	InsertHighlights(highlightTexts)
+	SetHighlightAsPosted("New")
+	highlights := GetUnpostedHighlights()
+	RemoveHighlightFromDatabase("New")
+	if len(highlights) <= 0 {
+
+	} else {
+		t.Errorf("should have deleted New highlight, size: %d", len(highlights))
+	}
+}
+
 func TestGetHighlights(t *testing.T) {
 	highlightTexts := []string{"New"}
 	InsertHighlights(highlightTexts)
@@ -19,6 +32,8 @@ func TestGetHighlights(t *testing.T) {
 	} else {
 		for _, highlight := range highlights {
 			fmt.Println(highlight, highlight.Text, highlight.Id)
+			SetHighlightAsPosted(highlight.Text)
+			RemoveHighlightFromDatabase(highlight.Text)
 		}
 	}
 }
