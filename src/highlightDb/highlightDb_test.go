@@ -18,7 +18,7 @@ func TestGetHighlights(t *testing.T) {
 		t.Errorf("GetHighlights did not return any highlights!")
 	} else {
 		for _, highlight := range highlights {
-			fmt.Println(highlight.Text)
+			fmt.Println(highlight, highlight.Text, highlight.Id)
 		}
 	}
 }
