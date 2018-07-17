@@ -19,10 +19,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(highlights)
 	highlightDb.InsertHighlights(highlights)
 
-	dbHighlights := highlightDb.GetHighlights()
+	dbHighlights := highlightDb.GetUnpostedHighlights()
+	fmt.Printf("Number of highlights to post: %d", len(dbHighlights))
 	for _, highlight := range dbHighlights {
 		twitter.Tweet(highlight.Text)
 	}

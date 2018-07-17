@@ -15,11 +15,10 @@ func Tweet(tweetText string) {
 
 	// Send a Tweet
 	//	tweet, resp, err :=
-	tweet, resp, err := client.Statuses.Update(tweetText, nil)
+	_, _, err := client.Statuses.Update(tweetText, nil)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(tweet, resp)
 }
 
 func FakeTweet(tweetText string) {
