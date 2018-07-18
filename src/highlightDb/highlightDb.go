@@ -87,13 +87,13 @@ func RemoveHighlightFromDatabase(highlightText string) {
 func createHighlightTable(db *sql.DB) {
 	stmt, err := db.Prepare(`CREATE TABLE IF NOT EXISTS 'new_posts' (
 		        	'uid' INTEGER PRIMARY KEY AUTOINCREMENT,
-			        'text' VARCHAR(144) UNIQUE NOT NULL
+			        'text' TEXT UNIQUE NOT NULL
 				);`)
 	_, err = stmt.Exec()
 	checkErr(err)
 	stmt, err = db.Prepare(`CREATE TABLE IF NOT EXISTS 'posted' (
 		        	'uid' INTEGER PRIMARY KEY AUTOINCREMENT,
-			        'text' VARCHAR(144) UNIQUE NOT NULL
+			        'text' TEXT UNIQUE NOT NULL
 				);`)
 	_, err = stmt.Exec()
 	checkErr(err)

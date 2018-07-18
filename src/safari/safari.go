@@ -4,6 +4,7 @@ import (
 	"golang.org/x/net/html"
 	"io"
 	"net/http"
+	"strings"
 )
 
 type safariHighlight struct {
@@ -34,7 +35,8 @@ func getSafariHighlights() []safariHighlight {
 func addCitationToHighlights(safariHighlights []safariHighlight) []string {
 	highlights := []string{}
 	for _, highlight := range safariHighlights {
-		highlights = append(highlights, highlight.Text+" - \""+highlight.Source+"\"")
+		citation := strings.TrimSpace(strings.Replace(highlight.Source, "\n", "", 1))
+		highlights = append(highlights, highlight.Text+" - \""+citation+"\"")
 	}
 	return highlights
 }

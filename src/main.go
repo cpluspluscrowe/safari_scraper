@@ -15,11 +15,12 @@ func doEvery(d time.Duration, f func()) {
 }
 
 func main() {
-	doEvery(120000*time.Millisecond, postHighlightsToTwitter)
+	doEvery(12000*time.Millisecond, postHighlightsToTwitter)
 }
 
 func postHighlightsToTwitter() {
 	highlights := safari.GetSafariHighlights()
+	fmt.Println(highlights)
 	highlightDb.InsertHighlights(highlights)
 
 	dbHighlights := highlightDb.GetUnpostedHighlights()
