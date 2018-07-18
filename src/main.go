@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"highlightDb"
-	"net/http"
 	"safari"
 	"time"
 	"twitter"
@@ -16,7 +15,7 @@ func doEvery(d time.Duration, f func()) {
 }
 
 func main() {
-	doEvery(5000*time.Millisecond, postHighlightsToTwitter)
+	doEvery(120000*time.Millisecond, postHighlightsToTwitter)
 }
 
 func postHighlightsToTwitter() {
