@@ -36,7 +36,7 @@ func addCitationToHighlights(safariHighlights []safariHighlight) []string {
 	highlights := []string{}
 	for _, highlight := range safariHighlights {
 		citation := strings.TrimSpace(strings.Replace(highlight.Source, "\n", "", 1))
-		highlights = append(highlights, highlight.Text+" - \""+citation+"\"")
+		highlights = append(highlights, highlight.Text+"\n- \""+citation+"\"")
 	}
 	return highlights
 }
@@ -46,7 +46,7 @@ func extractHighlights(body io.Reader) ([]safariHighlight, error) {
 	toPrint := false
 	z := html.NewTokenizer(body)
 	toGetSource := false
-	source := ""
+	highlightText := ""
 	for {
 		tt := z.Next()
 		switch tt {
@@ -54,11 +54,12 @@ func extractHighlights(body io.Reader) ([]safariHighlight, error) {
 			return highlights, nil
 		case html.TextToken:
 			if toGetSource {
-				source = string(z.Text())
+				source := string(z.Text())
+				highlights = append(highlights, safariHighlight{Text: highlightText, Source: source})
 				toGetSource = false
 			}
 			if toPrint {
-				highlights = append(highlights, safariHighlight{Text: string(z.Text()), Source: source})
+				highlightText = string(z.Text())
 				toPrint = false
 			}
 		case html.StartTagToken, html.EndTagToken:
