@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-type SafariHighlight struct {
+type safariHighlight struct {
 	Text   string
 	Source string
 }
 
-func GetSafariHighlights() []SafariHighlight {
+func GetSafariHighlights() []string {
 	url := "https://www.safaribooksonline.com/u/8aaaf02c-85f9-42f8-8628-3e0c83d24fd6/"
 	resp, err := http.Get(url)
 	defer resp.Body.Close()
@@ -22,11 +22,20 @@ func GetSafariHighlights() []SafariHighlight {
 	if err != nil {
 		panic(err)
 	}
+	withCitations := addCitationToHighlights(highlights)
+	return withCitations
+}
+
+func addCitationToHighlights(safariHighlights []safariHighlight) []string {
+	highlights := []string{}
+	for _, highlight := range safariHighlights {
+		highlights = append(highlights, highlight.Text+" - \""+highlight.Source+"\"")
+	}
 	return highlights
 }
 
-func extractHighlights(body io.Reader) ([]SafariHighlight, error) {
-	highlights := []SafariHighlight{}
+func extractHighlights(body io.Reader) ([]safariHighlight, error) {
+	highlights := []safariHighlight{}
 	toPrint := false
 	z := html.NewTokenizer(body)
 	toGetSource := false
@@ -42,7 +51,7 @@ func extractHighlights(body io.Reader) ([]SafariHighlight, error) {
 				toGetSource = false
 			}
 			if toPrint {
-				highlights = append(highlights, SafariHighlight{Text: string(z.Text()), Source: source})
+				highlights = append(highlights, safariHighlight{Text: string(z.Text()), Source: source})
 				toPrint = false
 			}
 		case html.StartTagToken, html.EndTagToken:
