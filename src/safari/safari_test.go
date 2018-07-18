@@ -4,6 +4,13 @@ import (
 	"testing"
 )
 
+func TestMainFunction(t *testing.T) {
+	safariHighlights := GetSafariHighlights()
+	if len(safariHighlights) == 0 {
+		t.Errorf("GetHighlights did not retrieve any safari highlights; received: %d", len(safariHighlights))
+	}
+}
+
 func TestItRetrievesHighlights(t *testing.T) {
 	safariHighlights := GetSafariHighlights()
 	if len(safariHighlights) == 0 {
@@ -12,7 +19,7 @@ func TestItRetrievesHighlights(t *testing.T) {
 }
 
 func TestThatHighlightsHaveSource(t *testing.T) {
-	safariHighlights := GetSafariHighlights()
+	safariHighlights := getSafariHighlights()
 	allHighlightsWithEmptySource := true
 	if len(safariHighlights) > 0 {
 		for _, highlight := range safariHighlights {

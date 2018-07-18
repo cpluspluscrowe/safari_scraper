@@ -12,6 +12,12 @@ type safariHighlight struct {
 }
 
 func GetSafariHighlights() []string {
+	highlights := getSafariHighlights()
+	withCitations := addCitationToHighlights(highlights)
+	return withCitations
+}
+
+func getSafariHighlights() []safariHighlight {
 	url := "https://www.safaribooksonline.com/u/8aaaf02c-85f9-42f8-8628-3e0c83d24fd6/"
 	resp, err := http.Get(url)
 	defer resp.Body.Close()
@@ -22,8 +28,7 @@ func GetSafariHighlights() []string {
 	if err != nil {
 		panic(err)
 	}
-	withCitations := addCitationToHighlights(highlights)
-	return withCitations
+	return highlights
 }
 
 func addCitationToHighlights(safariHighlights []safariHighlight) []string {
