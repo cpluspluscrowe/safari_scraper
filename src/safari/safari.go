@@ -47,6 +47,7 @@ func extractHighlights(body io.Reader) ([]safariHighlight, error) {
 	z := html.NewTokenizer(body)
 	toGetSource := false
 	highlightText := ""
+	link := ""
 	for {
 		tt := z.Next()
 		switch tt {
@@ -54,8 +55,8 @@ func extractHighlights(body io.Reader) ([]safariHighlight, error) {
 			return highlights, nil
 		case html.TextToken:
 			if toGetSource {
-				source := string(z.Text())
-				highlights = append(highlights, safariHighlight{Text: highlightText, Source: source})
+				//source := string(z.Text())
+				highlights = append(highlights, safariHighlight{Text: highlightText, Source: link})
 				toGetSource = false
 			}
 			if toPrint {
@@ -68,6 +69,12 @@ func extractHighlights(body io.Reader) ([]safariHighlight, error) {
 				toPrint = true
 			}
 			if string(value) == "t-annotation-archive-title" {
+				t := z.Token()
+				for _, a := range t.Attr {
+					if a.Key == "href" {
+						link = "https://www.safaribooksonline.com" + a.Val
+					}
+				}
 				toGetSource = true
 			}
 		}
