@@ -31,7 +31,6 @@ func TestGetHighlights(t *testing.T) {
 		t.Errorf("GetHighlights did not return any highlights!")
 	} else {
 		for _, highlight := range highlights {
-			fmt.Println(highlight, highlight.Text, highlight.Id)
 			SetHighlightAsPosted(highlight.Text)
 			RemoveHighlightFromDatabase(highlight.Text)
 		}

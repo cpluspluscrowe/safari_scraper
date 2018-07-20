@@ -5,6 +5,7 @@ import (
 	"github.com/dghubble/go-twitter/twitter"
 	"github.com/dghubble/oauth1"
 	"net/http"
+	"os"
 )
 
 func Tweet(tweetText string) {
@@ -35,9 +36,31 @@ func GetTweets(highlight string) {
 	fmt.Println(search, resp, err)
 }
 
+func Search(look4 string) {
+	twitterClient := getTwitterClient()
+	search, resp, err := twitterClient.Search.Tweets(&twitter.SearchTweetParams{
+		Query: "Golang",
+	})
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(search, resp, err)
+}
+
 func getClient() *http.Client {
-	config := oauth1.NewConfig("wvXNTaqdmmeAj884c0n4fUI1T", "vKQrJC5pO78U7cv38bo7NaisQowPc8RIFYoNgHqFDfmNZy0YWR")
-	token := oauth1.NewToken("3127629293-GJ3MaJe9QA540xRgMHFQz9Zo2OWDN5mSU4jc3DB", "PNiLZ8POuJWbCUUdaV4IFELUlz08YcwL7L8uJeXQPNjNu")
+	consumerKey := os.Getenv("consumerKey")
+	consumerSecret := os.Getenv("consumerSecret")
+	accessToken := os.Getenv("accessToken")
+	accessSecret := os.Getenv("accessSecret")
+
+	config := oauth1.NewConfig(consumerKey, consumerSecret)
+	token := oauth1.NewToken(accessToken, accessSecret)
 	httpClient := config.Client(oauth1.NoContext, token)
 	return httpClient
+}
+
+func getTwitterClient() *twitter.Client {
+	httpClient := getClient()
+	client := twitter.NewClient(httpClient)
+	return client
 }

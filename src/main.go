@@ -20,7 +20,6 @@ func main() {
 
 func postHighlightsToTwitter() {
 	highlights := safari.GetSafariHighlights()
-	fmt.Println(highlights)
 	highlightDb.InsertHighlights(highlights)
 
 	dbHighlights := highlightDb.GetUnpostedHighlights()
